@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { QueryTypes } from "sequelize";
+import Tour from "../../models/tour.model";
 import sequelize from "../../config/database";
 
 // [Get] /tours/:slugCategory
@@ -37,9 +38,18 @@ export const index = async (req: Request, res: Response) => {
 // [Get] /tours/detail/:slugTour
 export const detail = async (req: Request, res: Response) => {
     const slugTour = req.params.slugTour;
-
+    const tourDetail = await Tour.findOne({
+        raw: true, where: {
+            slug: slugTour, deleted: false, status: "active"
+        }
+    })
+    if(tourDetail["images"]){
+        tourDetail["images"] = JSON.parse(tourDetail["images"])
+    }
+    tourDetail["price_special"] = tourDetail["price"] * (1 - tourDetail["discount"] / 100);
 
     res.render("client/pages/tours/detail", {
         pageTitle: "Chi tiết tour",
+        tourDetail: tourDetail
     });
 }

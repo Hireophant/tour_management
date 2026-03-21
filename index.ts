@@ -4,7 +4,7 @@ dotenv.config();
 import express, { Express} from "express";
 
 
-
+import moment from "moment";
 import clientRoutes from "./routes/client/index.route";
 
 
@@ -16,6 +16,9 @@ app.use(express.static("public"));
 
 app.set("views", "./views")
 app.set("view engine", "pug");
+
+//App Local Variables
+app.locals.moment = moment;
 
 // Client routes
 clientRoutes(app);
