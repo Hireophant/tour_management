@@ -40,6 +40,21 @@ const alertAddCartSuccess = () => {
   });
 };
 
+// Hiển thị thêm số lượng tour trong giỏ hàng mini-cart
+const showMiniCart = () => {
+  const miniCart = document.querySelector("[mini-cart]");
+  if (miniCart) {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    const totalQuantity = cart.reduce(
+      (total, item) => total + item.quantity,
+      0,
+    );
+    miniCart.innerHTML = totalQuantity;
+  }
+};
+
+showMiniCart();
+
 // 2. Thêm tour vào cart
 const formAddToCart = document.querySelector("[form-add-to-cart]");
 
