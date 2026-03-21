@@ -1,10 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import express, { Express, Request, Response } from "express";
-import sequelize from "./config/database";
+import express, { Express} from "express";
 
-sequelize;
+
+
+import clientRoutes from "./routes/client/index.route";
+
 
 const app: Express = express();
 const port: number | string = process.env.PORT || 3000;
@@ -12,9 +14,8 @@ const port: number | string = process.env.PORT || 3000;
 app.set("views", "./views")
 app.set("view engine", "pug");
 
-app.get("/tours", (req: Request, res: Response) => {
-    res.render("client/pages/tours/index");
-});
+// Client routes
+clientRoutes(app);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
