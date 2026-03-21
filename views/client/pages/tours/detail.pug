@@ -4,15 +4,36 @@ include ../../mixins/moment.pug
 
 
 block main
+  div(
+    class="alert alert-success alert-hidden"
+    alert-add-cart-success
+  ) Đã thêm tour vào giỏ hàng! <span close-alert><i class="fa-solid fa-xmark"></i></span>
+
+
   .tour-detail
     .container.my-3
       .row
         .col-6
           if (tourDetail.images.length > 0)
             .inner-images
-              each image in tourDetail.images
-                .inner-image
-                  img(src=image)
+              div(class="swiper imagesMain")
+                div(class="swiper-wrapper")
+                  each image in tourDetail.images
+                    div(class="swiper-slide")
+                      a(href=image)
+                        .inner-image
+                          img(src=image)
+                div(class="swiper-button-next")
+                div(class="swiper-button-prev")
+
+              div(class="swiper imagesThumb")
+                div(class="swiper-wrapper")
+                  each image in tourDetail.images
+                    div(class="swiper-slide")
+                      a(href=image)
+                        .inner-image
+                          img(src=image)
+
         .col-6
           .inner-title #{tourDetail.title}
 
