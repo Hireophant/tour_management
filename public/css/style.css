@@ -321,3 +321,78 @@
 }
 
 /* End box-search */
+
+/* tour-detail */
+.tour-detail .inner-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #c12026;
+    margin-bottom: 15px;
+}
+
+.tour-detail .inner-barcode,
+.tour-detail .inner-time-start,
+.tour-detail .inner-stock {
+    color: #3c3c3c;
+    margin-bottom: 10px;
+}
+
+.tour-detail .inner-price-special {
+    font-size: 28px;
+    font-weight: 700;
+    color: #c12026;
+    margin-bottom: 10px;
+}
+
+.tour-detail .inner-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3c3c3c;
+    text-decoration: line-through;
+    margin-bottom: 10px;
+}
+
+.tour-detail .inner-percent {
+    font-weight: 700;
+    color: #3c3c3c;
+    margin-bottom: 10px;
+}
+
+.tour-detail .inner-images .inner-image {
+    margin-bottom: 15px;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tour-detail .inner-images .inner-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.tour-detail .inner-infomation {
+    margin-top: 30px;
+    border: 1px solid #b5b5b5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tour-detail .inner-infomation .inner-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #c12026;
+    border-bottom: 1px solid #b5b5b5;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.tour-detail .inner-infomation .inner-text {
+    white-space: pre-line;
+}
+
+.tour-detail .inner-infomation .inner-text img {
+    max-width: 100%;
+    height: auto;
+}
+/* End tour-detail */
